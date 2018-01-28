@@ -1,5 +1,4 @@
 var request = require("request");
-const readline = require('readline');
 
 // Random
 var rand = (option) => {
@@ -18,8 +17,8 @@ var rand = (option) => {
 };
 
 var config = {
-  ref: 'https://drop.allsportschain.com/EN/index?r=9434f832',
-  proses: 0
+  // Link Referral
+  ref: 'https://drop.allsportschain.com/EN/index?r=9434f832'
 };
 
 var data = {
@@ -49,16 +48,6 @@ var send = (addr, sns) => {
   return 'Sukses : ' + addr;
 };
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-rl.on('close', () => {
-  console.log('Berhasil Keluar');
-  process.exit(0);
-});
-
-setInterval(function() {
+setInterval(() => {
   console.log(send(rand('address'), rand('telegram')));
-}, 1500);
+}, 2000);
